@@ -1,12 +1,13 @@
 package com.example.lab_week_02_b
 
+import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import android.app.Activity
-import android.content.Intent
 
 class ActivityResult : AppCompatActivity() {
     companion object {
@@ -35,6 +36,11 @@ class ActivityResult : AppCompatActivity() {
                 findViewById<TextView>(R.id.color_code_result_message)
             resultMessage.text = getString(R.string.color_code_result_message,
                 colorCode?.uppercase())
+        }
+
+        val backButton = findViewById<Button>(R.id.button_back)
+        backButton.setOnClickListener {
+            finish() // balik ke MainActivity tanpa restart
         }
     }
 }
